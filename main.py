@@ -46,6 +46,8 @@ for i in tokens:
                     timeTill = str(timeTill).split('.')[0]
                     if '-' in timeTill:
                         timeTill = 'No cooldown!'
+                        with open("data/not-used.txt", 'a') as f:
+                            f.write(token + '\n')
                     profile_of_user = validate_token(token)
                     print(f"""
                         {Fore.RED}Profile: {profile_of_user}
@@ -75,4 +77,5 @@ for i in tokens:
         print(f'                        [!] Unknown return code {boost_data.status_code}')
 print(f'{Fore.RESET}\n                        Finished Checking {Fore.GREEN}[Not Used]: {data.notused} {Fore.RED}[Used]: {data.used} [Locked]: {data.locked} [Invalid]: {data.invalid}')
 removedups("data/used.txt")
+removedups("data/not-used.txt")
 
