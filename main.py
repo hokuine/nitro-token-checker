@@ -46,6 +46,7 @@ for i in tokens:
                     timeTill = str(timeTill).split('.')[0]
                     if '-' in timeTill:
                         timeTill = 'No cooldown!'
+                        print(f"Token still is boosting, leave server to be able to boost - {token}")
                         with open("data/not-used.txt", 'a') as f:
                             f.write(token + '\n')
                     profile_of_user = validate_token(token)
